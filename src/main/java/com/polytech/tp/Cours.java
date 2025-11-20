@@ -22,10 +22,14 @@ public class Cours implements ICours {
         this.niveau = niveau;
         this.necessiteProjecteur = necessiteProjecteur;
     }
-
     @Override
     public String getDescription() {
-        return "Cours de " + matiere + " avec " + enseignant + " (" + salle + ")";
+        return "Cours de " + matiere +
+               " avec " + enseignant +
+               " (" + salle + ")" +
+               (date != null ? " le " + date : "") +
+               (heureDebut != null ? " à " + heureDebut : "") +
+               (necessiteProjecteur ? " [projecteur requis]" : "");
     }
 
     @Override
